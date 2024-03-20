@@ -1,0 +1,79 @@
+TASK1) 
+
+void main(){
+  List<String> input = ['apple','banana','orange','grape','mango'];
+  findLargest(input);
+}
+
+void findLargest(List<String> list){
+  list.sort((a,b) => a.length.compareTo(b.length));
+  print(list.last);
+}
+
+TASK 2)
+
+int sumOfSquares(List<int> numbers, int Function(int) transform) {
+  return numbers
+      .map(transform)
+      .map((n) => n * n)
+      .reduce((value, element) => value + element);
+}
+
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5];
+
+  int result = sumOfSquares(numbers, (n) => n);
+  print(result);
+}
+
+TASK 3)
+
+class Person {
+  String name;
+  int age;
+
+  // Named constructor
+  Person.fromNameAndAge(this.name, this.age);
+}
+
+void main() {
+  // Creating an instance of Person using the named constructor
+  Person person = Person.fromNameAndAge('John Doe', 30);
+
+  // Accessing properties
+  print('Name: ${person.name}, Age: ${person.age}');
+}
+
+TASK 4)
+
+int sum([List<int>? numbers]) {
+  if (numbers == null) {
+    return 0;
+  }
+
+  int total = 0;
+  for (int number in numbers) {
+    total += number;
+  }
+  return total;
+}
+
+TASK 5)
+
+double calculateArea({double? length, double? width}) {
+  if (length != null && width != null) {
+    return length * width; // Rectangle
+  } else if (length != null) {
+    return length * length; // Square
+  } else {
+    return 0; // No dimensions provided
+  }
+}
+
+TASK 6)
+
+Future<void> delayedPrint(String message, int delayMilliseconds) async {
+  await Future.delayed(Duration(milliseconds: delayMilliseconds));
+  print(message);
+}
+
